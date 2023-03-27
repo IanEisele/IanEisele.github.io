@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cannabis Strain Search</title>
-  </head>
-  <body>
-    <h1>Cannabis Strain Search</h1>
-    <form id="search-form">
-      <label for="strain-name">Enter strain name:</label>
-      <input type="text" id="strain-name" name="strain-name">
-      <input type="submit" value="Search">
-    </form>
-    <div id="results"></div>
+<head>
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        #player-choice, #computer-choice {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #result {
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <p>Choose your move:</p>
+    <button onclick="play('rock')">Rock</button>
+    <button onclick="play('paper')">Paper</button>
+    <button onclick="play('scissors')">Scissors</button>
+    <p>Your choice: <span id="player-choice"></span></p>
+    <p>Computer's choice: <span id="computer-choice"></span></p>
+    <p id="result"></p>
 
-    <!-- Include your JavaScript file here -->
-    <script src="app.js"></script>
-  </body>
+    <script>
+        function play(playerChoice) {
+            let computerChoice = getComputerChoice();
+            document.getElementById("player-choice").textContent = playerChoice;
+            document.getElementById("computer-choice").textContent = computerChoice;
+            let result = getResult(playerChoice, computerChoice);
+            document.getElementById("result").textContent = result;
+        }
+
+        function getComputerChoice() {
+            let choices = ["rock", "paper", "scissors"];
+            let index = Math.floor(Math.random() * 3);
+            return choices[index];
+        }
+
+        function getResult(playerChoice, computerChoice) {
+            if (playerChoice === computerChoice) {
+                return "It's a tie!";
+            } else if ((playerChoice === "rock" && computerChoice === "scissors") ||
+                       (playerChoice === "paper" && computerChoice === "rock") ||
+                       (playerChoice === "scissors" && computerChoice === "paper")) {
+                return "You win!";
+            } else {
+                return "You lose!";
+            }
+        }
+    </script>
+</body>
 </html>
