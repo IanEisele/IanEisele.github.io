@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate App Icons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #667eea;
+        }
+        .instructions {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .icon-preview {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .icon-item {
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .success {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>iOS App Icon Generator</h1>
+
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Click the "Generate All Icons" button below</li>
+                <li>Right-click on each icon and select "Save Image As..."</li>
+                <li>Save each icon with the filename shown below it</li>
+                <li>Place all downloaded icons in your website's root directory</li>
+            </ol>
+        </div>
+
+        <button onclick="generateAllIcons()" style="font-size: 16px; padding: 15px 30px;">Generate All Icons</button>
+
+        <div class="icon-preview" id="iconPreview"></div>
+    </div>
+
+    <script>
+        const sizes = [
+            { size: 152, name: 'icon-152.png' },
+            { size: 167, name: 'icon-167.png' },
+            { size: 180, name: 'icon-180.png' },
+            { size: 192, name: 'icon-192.png' },
+            { size: 512, name: 'icon-512.png' }
+        ];
+
+        const splashSizes = [
+            { width: 1290, height: 2796, name: 'splash-430x932.png', label: 'iPhone 14 Pro Max' },
+            { width: 1179, height: 2556, name: 'splash-393x852.png', label: 'iPhone 14 Pro' },
+            { width: 1284, height: 2778, name: 'splash-428x926.png', label: 'iPhone 13/12 Pro Max' },
+            { width: 1170, height: 2532, name: 'splash-390x844.png', label: 'iPhone 13/12 Pro' },
+            { width: 1125, height: 2436, name: 'splash-375x812.png', label: 'iPhone 11 Pro/X' },
+            { width: 1242, height: 2688, name: 'splash-414x896.png', label: 'iPhone 11 Pro Max' }
+        ];
+
+        function drawIcon(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = size;
+            canvas.height = size;
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+
+            // Card background
+            const padding = size * 0.11;
+            const cardSize = size - (padding * 2);
+            const cardGradient = ctx.createLinearGradient(padding, padding, padding + cardSize, padding + cardSize);
+            cardGradient.addColorStop(0, 'rgba(255,255,255,0.25)');
+            cardGradient.addColorStop(1, 'rgba(255,255,255,0.15)');
+            ctx.fillStyle = cardGradient;
+            const radius = size * 0.1;
+            roundRect(ctx, padding, padding, cardSize, cardSize, radius);
+            ctx.fill();
+
+            // Border
+            ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Add emojis and text
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // Title
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.055}px Arial`;
+            ctx.shadowColor = 'rgba(0,0,0,0.3)';
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.fillText('EPIC RPS', size / 2, size * 0.25);
+
+            // Rock emoji (top)
+            ctx.font = `${size * 0.16}px Arial`;
+            ctx.fillText('🪨', size / 2, size * 0.33);
+
+            // VS text
+            ctx.font = `bold ${size * 0.1}px Arial`;
+            ctx.fillText('VS', size / 2, size * 0.53);
+
+            // Paper and Scissors (bottom)
+            ctx.font = `${size * 0.14}px Arial`;
+            ctx.fillText('📄', size * 0.35, size * 0.76);
+            ctx.fillText('✂️', size * 0.65, size * 0.76);
+
+            ctx.shadowColor = 'transparent';
+        }
+
+        function drawSplash(canvas, width, height) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = width;
+            canvas.height = height;
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, width, height);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
+            // Center content
+            const centerY = height / 2;
+
+            // Title
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${height * 0.08}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.shadowColor = 'rgba(0,0,0,0.3)';
+            ctx.shadowBlur = 10;
+            ctx.shadowOffsetX = 4;
+            ctx.shadowOffsetY = 4;
+            ctx.fillText('⚔️ EPIC BATTLE ⚔️', width / 2, centerY - height * 0.1);
+
+            // Subtitle
+            ctx.font = `${height * 0.04}px Arial`;
+            ctx.fillText('Rock • Paper • Scissors', width / 2, centerY + height * 0.02);
+
+            // Emojis
+            ctx.font = `${height * 0.15}px Arial`;
+            ctx.fillText('🪨', width * 0.25, centerY + height * 0.15);
+            ctx.fillText('📄', width * 0.5, centerY + height * 0.15);
+            ctx.fillText('✂️', width * 0.75, centerY + height * 0.15);
+
+            ctx.shadowColor = 'transparent';
+        }
+
+        function roundRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        function generateAllIcons() {
+            const preview = document.getElementById('iconPreview');
+            preview.innerHTML = '';
+
+            // Generate app icons
+            sizes.forEach(({size, name}) => {
+                const div = document.createElement('div');
+                div.className = 'icon-item';
+
+                const canvas = document.createElement('canvas');
+                drawIcon(canvas, size);
+
+                const label = document.createElement('div');
+                label.textContent = `${size}x${size}`;
+                label.style.fontWeight = 'bold';
+
+                const filename = document.createElement('div');
+                filename.textContent = name;
+                filename.style.fontSize = '12px';
+                filename.style.color = '#666';
+
+                const downloadBtn = document.createElement('button');
+                downloadBtn.textContent = 'Download';
+                downloadBtn.onclick = () => {
+                    downloadCanvas(canvas, name);
+                    downloadBtn.textContent = '✓ Downloaded';
+                    downloadBtn.style.background = '#4ade80';
+                    setTimeout(() => {
+                        downloadBtn.textContent = 'Download';
+                        downloadBtn.style.background = '#667eea';
+                    }, 2000);
+                };
+
+                div.appendChild(canvas);
+                div.appendChild(label);
+                div.appendChild(filename);
+                div.appendChild(downloadBtn);
+                preview.appendChild(div);
+            });
+
+            // Generate splash screens
+            const splashTitle = document.createElement('h2');
+            splashTitle.textContent = 'Splash Screens';
+            splashTitle.style.width = '100%';
+            splashTitle.style.marginTop = '30px';
+            splashTitle.style.color = '#667eea';
+            preview.appendChild(splashTitle);
+
+            splashSizes.forEach(({width, height, name, label}) => {
+                const div = document.createElement('div');
+                div.className = 'icon-item';
+
+                const canvas = document.createElement('canvas');
+                const scale = 0.2; // Show at 20% size for preview
+                canvas.style.width = (width * scale) + 'px';
+                canvas.style.height = (height * scale) + 'px';
+                drawSplash(canvas, width, height);
+
+                const labelDiv = document.createElement('div');
+                labelDiv.textContent = label;
+                labelDiv.style.fontWeight = 'bold';
+
+                const sizeDiv = document.createElement('div');
+                sizeDiv.textContent = `${width}x${height}`;
+                sizeDiv.style.fontSize = '11px';
+                sizeDiv.style.color = '#888';
+
+                const filename = document.createElement('div');
+                filename.textContent = name;
+                filename.style.fontSize = '12px';
+                filename.style.color = '#666';
+
+                const downloadBtn = document.createElement('button');
+                downloadBtn.textContent = 'Download';
+                downloadBtn.onclick = () => {
+                    downloadCanvas(canvas, name);
+                    downloadBtn.textContent = '✓ Downloaded';
+                    downloadBtn.style.background = '#4ade80';
+                    setTimeout(() => {
+                        downloadBtn.textContent = 'Download';
+                        downloadBtn.style.background = '#667eea';
+                    }, 2000);
+                };
+
+                div.appendChild(canvas);
+                div.appendChild(labelDiv);
+                div.appendChild(sizeDiv);
+                div.appendChild(filename);
+                div.appendChild(downloadBtn);
+                preview.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>
