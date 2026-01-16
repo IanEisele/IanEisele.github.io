@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import profile from '../../data/profile.json';
+import profileImage from '../../assets/images/profile.jpg';
 
 const yearsExperience = new Date().getFullYear() - profile.careerStartYear;
 ---
@@ -17,11 +19,10 @@ const yearsExperience = new Date().getFullYear() - profile.careerStartYear;
         <!-- Photo -->
         <div class="md:col-span-1" data-animate>
           <div class="aspect-square rounded-2xl bg-surface border border-border overflow-hidden">
-            <img
-              src="/images/profile.jpg"
-              alt="Profile photo"
+            <Image
+              src={profileImage}
+              alt="Ian Eisele"
               loading="lazy"
-              decoding="async"
               class="w-full h-full object-cover"
             />
           </div>
