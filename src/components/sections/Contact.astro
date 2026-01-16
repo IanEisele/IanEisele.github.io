@@ -4,22 +4,16 @@ import profile from '../../data/profile.json';
 
 const contactLinks = [
   {
-    href: `mailto:${profile.contact.email}`,
-    icon: 'lucide:mail',
-    label: 'Email',
-    value: profile.contact.email,
+    href: profile.contact.linkedin,
+    icon: 'lucide:linkedin',
+    label: 'LinkedIn',
+    value: 'Connect with me',
   },
   {
     href: profile.contact.github,
     icon: 'lucide:github',
     label: 'GitHub',
-    value: profile.contact.github.replace('https://', ''),
-  },
-  {
-    href: profile.contact.linkedin,
-    icon: 'lucide:linkedin',
-    label: 'LinkedIn',
-    value: profile.contact.linkedin.replace('https://', ''),
+    value: 'View my code',
   },
 ];
 ---
@@ -37,7 +31,7 @@ const contactLinks = [
         just having a conversation about technology and science. Feel free to reach out!
       </p>
 
-      <div class="grid sm:grid-cols-3 gap-6 mb-12">
+      <div class="grid sm:grid-cols-2 gap-6 max-w-md mx-auto mb-12">
         {
           contactLinks.map((link) => (
             <a
@@ -59,11 +53,13 @@ const contactLinks = [
       </div>
 
       <a
-        href={`mailto:${profile.contact.email}`}
+        href={profile.contact.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
         class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-bg font-semibold px-8 py-4 rounded-lg transition-all hover-glow text-lg"
       >
-        <Icon name="lucide:send" class="w-5 h-5" />
-        Send me a message
+        <Icon name="lucide:linkedin" class="w-5 h-5" />
+        Connect on LinkedIn
       </a>
     </div>
   </div>

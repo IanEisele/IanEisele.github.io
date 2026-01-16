@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = 'Ian Eisele | Application Scientist',
-  description = 'Application Scientist specializing in CDS Software, Python, AI/ML, and Scientific Data Analysis.',
+  title = 'Ian Eisele | Laboratory Informatics Scientist',
+  description = 'Laboratory Informatics Scientist specializing in CDS Software, LIMS, Python, AI/ML, and Scientific Data Analysis.',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -37,6 +37,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
     <title>{title}</title>
     <ViewTransitions />

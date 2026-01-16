@@ -1,9 +1,10 @@
 {
   "name": "Ian Eisele",
-  "title": "Application Scientist",
+  "title": "Laboratory Informatics Scientist",
+  "careerStartYear": 2006,
   "tagline": {
     "text": "Specializing in {highlights}.",
-    "highlights": ["CDS Software", "Python", "AI/ML", "Scientific Data Analysis"]
+    "highlights": ["CDS Software", "Analytics", "LIMS", "Python", "AI/ML", "Scientific Data Analysis"]
   },
   "bio": [
     "I'm an Application Scientist with a passion for leveraging technology to solve complex scientific challenges. My expertise spans CDS software, Python development, and machine learning applications in scientific contexts.",
@@ -11,8 +12,7 @@
     "When I'm not coding or analyzing data, you can find me exploring new technologies, contributing to open-source projects, or diving into the latest research in AI and machine learning."
   ],
   "stats": [
-    { "value": "5+", "label": "Years Experience" },
-    { "value": "10+", "label": "Projects Completed" },
+    { "value": "YEARS_EXPERIENCE", "label": "Years Experience" },
     { "value": "Python", "label": "Primary Language" }
   ],
   "contact": {

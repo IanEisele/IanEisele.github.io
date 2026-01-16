@@ -1,26 +1,42 @@
 [
   {
-    "title": "Application Scientist",
-    "company": "Company Name",
-    "location": "Location",
-    "startDate": "2023",
+    "title": "Informatics Application Scientist",
+    "company": "Agilent Technologies",
+    "location": "Wilmington, Delaware",
+    "startDate": "Sep 2021",
     "endDate": "Present",
-    "description": [
-      "Developed and maintained scientific data analysis pipelines using Python",
-      "Collaborated with cross-functional teams to implement AI/ML solutions",
-      "Provided technical support and training for CDS software applications"
-    ]
+    "description": []
   },
   {
-    "title": "Previous Role",
-    "company": "Previous Company",
-    "location": "Location",
-    "startDate": "2020",
-    "endDate": "2023",
-    "description": [
-      "Contributed to scientific software development projects",
-      "Analyzed complex datasets using Python and data visualization tools",
-      "Participated in research and development initiatives"
-    ]
+    "title": "Application Chemist",
+    "company": "Agilent Technologies",
+    "location": "Wilmington, Delaware",
+    "startDate": "Sep 2018",
+    "endDate": "Sep 2021",
+    "description": []
+  },
+  {
+    "title": "Technical Marketing Engineer",
+    "company": "Agilent Technologies",
+    "location": "Wilmington, Delaware",
+    "startDate": "Nov 2013",
+    "endDate": "Aug 2018",
+    "description": []
+  },
+  {
+    "title": "Field Service Engineer",
+    "company": "Agilent Technologies",
+    "location": "Sacramento, California",
+    "startDate": "Jul 2012",
+    "endDate": "Nov 2013",
+    "description": []
+  },
+  {
+    "title": "Customer Service Engineer",
+    "company": "Agilent Technologies",
+    "location": "Wilmington, Delaware",
+    "startDate": "Jul 2009",
+    "endDate": "Jul 2012",
+    "description": []
   }
 ]

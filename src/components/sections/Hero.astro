@@ -6,8 +6,6 @@ import profile from '../../data/profile.json';
 <section id="hero" class="min-h-screen flex items-center justify-center px-4 pt-16">
   <div class="max-w-4xl mx-auto text-center">
     <div class="stagger-children animate">
-      <p class="text-accent font-medium mb-4 text-lg">Hello, I'm</p>
-
       <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-text mb-6">
         {profile.name}
       </h1>
@@ -30,19 +28,21 @@ import profile from '../../data/profile.json';
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href="#contact"
+          href="https://linkedin.com/in/ianeisele"
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-bg font-semibold px-8 py-3 rounded-lg transition-all hover-glow"
         >
-          <Icon name="lucide:mail" class="w-5 h-5" />
-          Get in Touch
+          <Icon name="lucide:linkedin" class="w-5 h-5" />
+          Connect on LinkedIn
         </a>
 
         <a
-          href="#projects"
+          href="#publications"
           class="inline-flex items-center gap-2 border border-border hover:border-accent text-text hover:text-accent font-semibold px-8 py-3 rounded-lg transition-all"
         >
-          <Icon name="lucide:folder" class="w-5 h-5" />
-          View Projects
+          <Icon name="lucide:file-text" class="w-5 h-5" />
+          View Publications
         </a>
       </div>
     </div>
