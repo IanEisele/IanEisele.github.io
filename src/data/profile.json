@@ -1,0 +1,23 @@
+{
+  "name": "Ian Eisele",
+  "title": "Application Scientist",
+  "tagline": {
+    "text": "Specializing in {highlights}.",
+    "highlights": ["CDS Software", "Python", "AI/ML", "Scientific Data Analysis"]
+  },
+  "bio": [
+    "I'm an Application Scientist with a passion for leveraging technology to solve complex scientific challenges. My expertise spans CDS software, Python development, and machine learning applications in scientific contexts.",
+    "With a strong foundation in scientific data analysis, I bridge the gap between domain expertise and software solutions. I enjoy building tools and systems that help scientists and researchers work more efficiently.",
+    "When I'm not coding or analyzing data, you can find me exploring new technologies, contributing to open-source projects, or diving into the latest research in AI and machine learning."
+  ],
+  "stats": [
+    { "value": "5+", "label": "Years Experience" },
+    { "value": "10+", "label": "Projects Completed" },
+    { "value": "Python", "label": "Primary Language" }
+  ],
+  "contact": {
+    "email": "your.email@example.com",
+    "github": "https://github.com/IanEisele",
+    "linkedin": "https://linkedin.com/in/ianeisele"
+  }
+}

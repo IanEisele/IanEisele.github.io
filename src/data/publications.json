@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Streamline Laboratory Operations with Sample Scheduler for OpenLab",
+    "year": 2024,
+    "description": "Comprehensive white paper on using Sample Scheduler for OpenLab to automate laboratory workflows and improve operational efficiency. Covers LIMS integration, sample management automation, instrument scheduling, and data integrity compliance for analytical laboratories.",
+    "link": "https://www.agilent.com/cs/library/whitepaper/public/wp-openlab-sample-scheduler-5994-7041en-agilent.pdf",
+    "tags": ["software", "LIMS", "workflow-management", "automation", "OpenLab-CDS", "sample-scheduler"]
+  },
+  {
+    "title": "Centralizing the Management of PFAS Testing with Agilent SLIMS",
+    "year": 2024,
+    "description": "End-to-end workflow management for PFAS testing using Agilent SLIMS laboratory execution system. Demonstrates complete sample tracking, regulatory compliance support for EPA Methods 533 and 1633, automated data review, and integrated reporting for environmental PFAS analysis.",
+    "link": "https://www.agilent.com/cs/library/whitepaper/public/wp-centralizingmanagement-PFAStestingwith-AgilentSLIMS-5994-7693en-agilent.pdf",
+    "tags": ["LIMS", "SLIMS", "PFAS", "environmental", "workflow-management", "EPA-method", "compliance"]
+  },
+  {
+    "title": "Analysis of Drinking Water with the Agilent 8860 GC and 7697A Headspace Sampler",
+    "year": 2022,
+    "description": "Demonstrates the flexibility of the Agilent 8860 GC for drinking water analysis requiring multiple detection types. Volatile halogenated and aromatic hydrocarbons detected by FID and ECD, while organophosphorus pesticides detected by FPD using headspace sampling.",
+    "link": "https://www.agilent.com/cs/library/applications/application-drinking-water-8860-gc-7697a-headspace-5994-1239en-agilent.pdf",
+    "tags": ["chromatography", "GC", "environmental", "water-quality", "pesticides", "headspace"]
+  },
+  {
+    "title": "Residual Solvents Analysis with an Agilent Intuvo 9000 GC System and 8697 Headspace Sampler",
+    "year": 2021,
+    "description": "Analysis of residual solvents according to USP <467> using the Agilent 8697 Headspace Sampler with the Agilent Intuvo 9000 Gas Chromatograph. Demonstrates dual column, dual FID configuration for pharmaceutical analysis with excellent retention time and peak area precision.",
+    "link": "https://www.agilent.com/cs/library/applications/application-residual-solvents-intuvo-9000-8697-headspace-5994-3075de-de-agilent.pdf",
+    "tags": ["chromatography", "pharmaceutical", "GC", "headspace", "residual-solvents"]
+  },
+  {
+    "title": "Haloacetic Acid Analysis by the Agilent Intuvo 9000 Dual ECD System",
+    "year": 2020,
+    "description": "Analysis of haloacetic acid methyl esters using the Agilent Intuvo 9000 Dual ECD system following HJ 758-2015 and EPA 552.3 standards. Evaluates instrument performance with dual column configuration using both nitrogen and helium carrier gases, including fast analysis with 15m columns.",
+    "link": "https://www.agilent.com/cs/library/applications/application-haloacetic-acid-analysis-intuvo-gc-5994-3023en-agilent.pdf",
+    "tags": ["chromatography", "GC", "environmental", "water-quality", "EPA-method", "dual-ECD"]
+  },
+  {
+    "title": "Retention Time Locking of Organochlorine Pesticides on an 8860 Using the OpenLab Retention Time Locking Wizard",
+    "year": 2019,
+    "description": "Demonstrates retention time stability on an Agilent 8860 gas chromatograph using the RTL wizard feature of Agilent OpenLab CDS. Analysis of 20 chlorinated pesticides shows excellent peak resolution and retention time repeatability before and after column maintenance events.",
+    "link": "https://www.agilent.com/cs/library/applications/application-rtl-organochlorine-pesticides-on%208860gc-5994-0551en-agilent.pdf",
+    "tags": ["chromatography", "GC", "food-testing", "pesticides", "software", "method-development"]
+  },
+  {
+    "title": "Determination of Benzene and Toluene in Gasoline by ASTM D3606 on an Agilent 8890 GC with Capillary Columns",
+    "year": 2019,
+    "description": "Determination of benzene and toluene concentrations in finished gasoline according to ASTM D3606 using capillary columns and midcolumn backflush with a monitor channel. Demonstrates the use of hydrogen as an alternate carrier gas for regulatory and blending applications.",
+    "link": "https://www.agilent.com/cs/library/applications/application-benzene-and-toluene-in-gasoline-5994-1548en-agilent.pdf",
+    "tags": ["chromatography", "GC", "energy", "petroleum", "ASTM", "backflush"]
+  }
+]

@@ -1,24 +1,25 @@
 ---
 import { Icon } from 'astro-icon/components';
+import profile from '../../data/profile.json';
 
 const contactLinks = [
   {
-    href: 'mailto:your.email@example.com',
+    href: `mailto:${profile.contact.email}`,
     icon: 'lucide:mail',
     label: 'Email',
-    value: 'your.email@example.com',
+    value: profile.contact.email,
   },
   {
-    href: 'https://github.com/IanEisele',
+    href: profile.contact.github,
     icon: 'lucide:github',
     label: 'GitHub',
-    value: 'github.com/IanEisele',
+    value: profile.contact.github.replace('https://', ''),
   },
   {
-    href: 'https://linkedin.com/in/ianeisele',
+    href: profile.contact.linkedin,
     icon: 'lucide:linkedin',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/ianeisele',
+    value: profile.contact.linkedin.replace('https://', ''),
   },
 ];
 ---
@@ -58,7 +59,7 @@ const contactLinks = [
       </div>
 
       <a
-        href="mailto:your.email@example.com"
+        href={`mailto:${profile.contact.email}`}
         class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-bg font-semibold px-8 py-4 rounded-lg transition-all hover-glow text-lg"
       >
         <Icon name="lucide:send" class="w-5 h-5" />

@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import profile from '../../data/profile.json';
 ---
 
 <section id="hero" class="min-h-screen flex items-center justify-center px-4 pt-16">
@@ -8,18 +9,23 @@ import { Icon } from 'astro-icon/components';
       <p class="text-accent font-medium mb-4 text-lg">Hello, I'm</p>
 
       <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-text mb-6">
-        Ian Eisele
+        {profile.name}
       </h1>
 
       <h2 class="text-2xl sm:text-3xl lg:text-4xl text-text-muted mb-8">
-        Application Scientist
+        {profile.title}
       </h2>
 
       <p class="text-text-muted text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-        Specializing in <span class="text-accent">CDS Software</span>,
-        <span class="text-accent">Python</span>,
-        <span class="text-accent">AI/ML</span>, and
-        <span class="text-accent">Scientific Data Analysis</span>.
+        Specializing in {
+          profile.tagline.highlights.map((item, index) => (
+            <>
+              <span class="text-accent">{item}</span>
+              {index < profile.tagline.highlights.length - 2 && ', '}
+              {index === profile.tagline.highlights.length - 2 && ', and '}
+            </>
+          ))
+        }.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
