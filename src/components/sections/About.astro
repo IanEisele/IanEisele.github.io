@@ -14,14 +14,14 @@ const yearsExperience = new Date().getFullYear() - profile.careerStartYear;
       </h2>
 
       <div class="grid md:grid-cols-3 gap-12 items-start">
-        <!-- Photo placeholder -->
+        <!-- Photo -->
         <div class="md:col-span-1" data-animate>
-          <div class="aspect-square rounded-2xl bg-surface border border-border flex items-center justify-center overflow-hidden">
-            <!-- Replace with actual photo -->
-            <div class="text-center text-text-muted p-8">
-              <Icon name="lucide:user" class="w-24 h-24 mx-auto mb-4 opacity-50" />
-              <p class="text-sm">Photo placeholder</p>
-            </div>
+          <div class="aspect-square rounded-2xl bg-surface border border-border overflow-hidden">
+            <img 
+              src="/images/profile.jpg" 
+              alt="Profile photo"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
 
