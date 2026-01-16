@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-icon/components';
+import experienceData from '../../data/experience.json';
+---
+
+<section id="experience" class="py-24 px-4 bg-surface/30">
+  <div class="max-w-6xl mx-auto">
+    <div class="stagger-children">
+      <h2 class="text-3xl sm:text-4xl font-bold text-text mb-12 flex items-center gap-4">
+        <span class="text-accent">//</span>
+        Experience
+      </h2>
+
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2"></div>
+
+        <!-- Timeline items -->
+        <div class="space-y-12">
+          {
+            experienceData.map((job, index) => (
+              <div
+                class={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                data-animate
+              >
+                <!-- Timeline dot -->
+                <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-accent rounded-full -translate-x-1/2 border-4 border-bg z-10"></div>
+
+                <!-- Content card -->
+                <div class={`md:w-1/2 ml-8 md:ml-0 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12 md:text-right'}`}>
+                  <div class="bg-surface border border-border rounded-xl p-6 hover-glow">
+                    <div class={`flex items-center gap-2 text-accent text-sm font-medium mb-2 ${index % 2 === 0 ? '' : 'md:justify-end'}`}>
+                      <Icon name="lucide:calendar" class="w-4 h-4" />
+                      <span>{job.startDate} - {job.endDate}</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-text mb-1">{job.title}</h3>
+                    <p class="text-text-muted mb-4">{job.company} &middot; {job.location}</p>
+
+                    <ul class={`space-y-2 ${index % 2 === 0 ? '' : 'md:text-left'}`}>
+                      {job.description.map((item) => (
+                        <li class="text-text-muted text-sm flex items-start gap-2">
+                          <Icon name="lucide:check" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Spacer for alternating layout -->
+                <div class="hidden md:block md:w-1/2"></div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

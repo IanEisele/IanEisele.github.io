@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Application Scientist",
+    "company": "Company Name",
+    "location": "Location",
+    "startDate": "2023",
+    "endDate": "Present",
+    "description": [
+      "Developed and maintained scientific data analysis pipelines using Python",
+      "Collaborated with cross-functional teams to implement AI/ML solutions",
+      "Provided technical support and training for CDS software applications"
+    ]
+  },
+  {
+    "title": "Previous Role",
+    "company": "Previous Company",
+    "location": "Location",
+    "startDate": "2020",
+    "endDate": "2023",
+    "description": [
+      "Contributed to scientific software development projects",
+      "Analyzed complex datasets using Python and data visualization tools",
+      "Participated in research and development initiatives"
+    ]
+  }
+]

@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="about" class="py-24 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="stagger-children">
+      <h2 class="text-3xl sm:text-4xl font-bold text-text mb-12 flex items-center gap-4">
+        <span class="text-accent">//</span>
+        About Me
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-12 items-start">
+        <!-- Photo placeholder -->
+        <div class="md:col-span-1" data-animate>
+          <div class="aspect-square rounded-2xl bg-surface border border-border flex items-center justify-center overflow-hidden">
+            <!-- Replace with actual photo -->
+            <div class="text-center text-text-muted p-8">
+              <Icon name="lucide:user" class="w-24 h-24 mx-auto mb-4 opacity-50" />
+              <p class="text-sm">Photo placeholder</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio content -->
+        <div class="md:col-span-2 space-y-6" data-animate>
+          <p class="text-text-muted text-lg leading-relaxed">
+            I'm an Application Scientist with a passion for leveraging technology
+            to solve complex scientific challenges. My expertise spans CDS software,
+            Python development, and machine learning applications in scientific contexts.
+          </p>
+
+          <p class="text-text-muted text-lg leading-relaxed">
+            With a strong foundation in scientific data analysis, I bridge the gap
+            between domain expertise and software solutions. I enjoy building tools
+            and systems that help scientists and researchers work more efficiently.
+          </p>
+
+          <p class="text-text-muted text-lg leading-relaxed">
+            When I'm not coding or analyzing data, you can find me exploring new
+            technologies, contributing to open-source projects, or diving into the
+            latest research in AI and machine learning.
+          </p>
+
+          <!-- Quick stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6">
+            <div class="bg-surface rounded-lg p-4 border border-border">
+              <div class="text-2xl font-bold text-accent">5+</div>
+              <div class="text-text-muted text-sm">Years Experience</div>
+            </div>
+            <div class="bg-surface rounded-lg p-4 border border-border">
+              <div class="text-2xl font-bold text-accent">10+</div>
+              <div class="text-text-muted text-sm">Projects Completed</div>
+            </div>
+            <div class="bg-surface rounded-lg p-4 border border-border">
+              <div class="text-2xl font-bold text-accent">Python</div>
+              <div class="text-text-muted text-sm">Primary Language</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

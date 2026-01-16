@@ -1,0 +1,51 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="hero" class="min-h-screen flex items-center justify-center px-4 pt-16">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="stagger-children animate">
+      <p class="text-accent font-medium mb-4 text-lg">Hello, I'm</p>
+
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-text mb-6">
+        Ian Eisele
+      </h1>
+
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl text-text-muted mb-8">
+        Application Scientist
+      </h2>
+
+      <p class="text-text-muted text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+        Specializing in <span class="text-accent">CDS Software</span>,
+        <span class="text-accent">Python</span>,
+        <span class="text-accent">AI/ML</span>, and
+        <span class="text-accent">Scientific Data Analysis</span>.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-bg font-semibold px-8 py-3 rounded-lg transition-all hover-glow"
+        >
+          <Icon name="lucide:mail" class="w-5 h-5" />
+          Get in Touch
+        </a>
+
+        <a
+          href="#projects"
+          class="inline-flex items-center gap-2 border border-border hover:border-accent text-text hover:text-accent font-semibold px-8 py-3 rounded-lg transition-all"
+        >
+          <Icon name="lucide:folder" class="w-5 h-5" />
+          View Projects
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <a href="#about" class="text-text-muted hover:text-accent transition-colors">
+        <Icon name="lucide:chevron-down" class="w-8 h-8" />
+      </a>
+    </div>
+  </div>
+</section>

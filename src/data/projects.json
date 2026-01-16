@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Project Name",
+    "description": "A brief description of the project and its impact. Highlight key technologies used and outcomes achieved.",
+    "technologies": ["Python", "Machine Learning", "Data Analysis"],
+    "link": "https://github.com/IanEisele",
+    "image": null
+  },
+  {
+    "title": "Another Project",
+    "description": "Description of another significant project. Focus on the problem solved and the value delivered.",
+    "technologies": ["Python", "API Development", "Automation"],
+    "link": "https://github.com/IanEisele",
+    "image": null
+  },
+  {
+    "title": "Third Project",
+    "description": "A third project showcasing different skills or technologies. Emphasize innovation and results.",
+    "technologies": ["Data Visualization", "Scientific Computing"],
+    "link": "https://github.com/IanEisele",
+    "image": null
+  }
+]

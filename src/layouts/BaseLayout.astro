@@ -1,0 +1,76 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Ian Eisele | Application Scientist',
+  description = 'Application Scientist specializing in CDS Software, Python, AI/ML, and Scientific Data Analysis.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Ian Eisele" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL('/og-image.png', Astro.site)} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen bg-bg text-text antialiased">
+    <slot />
+
+    <!-- Scroll animation observer -->
+    <script>
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, observerOptions);
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.stagger-children, [data-animate]').forEach((el) => {
+          observer.observe(el);
+        });
+      });
+
+      document.addEventListener('astro:after-swap', () => {
+        document.querySelectorAll('.stagger-children, [data-animate]').forEach((el) => {
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

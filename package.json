@@ -1,0 +1,19 @@
+{
+  "name": "ian-eisele-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
+    "@iconify-json/lucide": "^1.2.85",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.11",
+    "astro-icon": "^1.1.5",
+    "tailwindcss": "^4.1.18"
+  }
+}

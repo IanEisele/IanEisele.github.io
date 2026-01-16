@@ -1,0 +1,20 @@
+{
+  "categories": [
+    {
+      "name": "Programming Languages",
+      "skills": ["Python", "SQL", "JavaScript", "R"]
+    },
+    {
+      "name": "Data & ML",
+      "skills": ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Data Visualization"]
+    },
+    {
+      "name": "Scientific Software",
+      "skills": ["CDS Software", "Laboratory Informatics", "LIMS", "Scientific Analysis"]
+    },
+    {
+      "name": "Tools & Technologies",
+      "skills": ["Git", "Docker", "AWS", "REST APIs", "Jupyter"]
+    }
+  ]
+}
