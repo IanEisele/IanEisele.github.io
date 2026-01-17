@@ -49,9 +49,14 @@ import profile from '../../data/profile.json';
 
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <a href="#about" aria-label="Scroll to about section" class="text-text-muted hover:text-accent transition-colors">
+      <button
+        type="button"
+        aria-label="Scroll to about section"
+        class="text-text-muted hover:text-accent transition-colors cursor-pointer"
+        onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })"
+      >
         <Icon name="lucide:chevron-down" class="w-8 h-8" />
-      </a>
+      </button>
     </div>
   </div>
 </section>
