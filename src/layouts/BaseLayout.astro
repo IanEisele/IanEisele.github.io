@@ -43,6 +43,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <ViewTransitions />
   </head>
   <body class="min-h-screen bg-bg text-text antialiased">
+    <!-- Scroll progress indicator -->
+    <div
+      id="scroll-progress"
+      class="fixed top-0 left-0 h-0.5 bg-accent z-[60]"
+      style="width: 0%"
+    ></div>
+
     <slot />
 
     <!-- Scroll animation observer -->
@@ -72,6 +79,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           observer.observe(el);
         });
       });
+    </script>
+
+    <!-- Scroll progress indicator -->
+    <script>
+      function updateScrollProgress() {
+        const scrollProgress = document.getElementById('scroll-progress');
+        if (!scrollProgress) return;
+
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        scrollProgress.style.width = `${scrollPercent}%`;
+      }
+
+      window.addEventListener('scroll', updateScrollProgress, { passive: true });
+      document.addEventListener('DOMContentLoaded', updateScrollProgress);
+      document.addEventListener('astro:after-swap', updateScrollProgress);
     </script>
   </body>
 </html>
