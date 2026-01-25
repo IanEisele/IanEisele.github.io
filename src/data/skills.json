@@ -5,16 +5,16 @@
       "skills": ["GC", "GCxGC", "GC-MS", "LC-MS", "LC-MS/MS"]
     },
     {
-      "name": "Data Science & Coding",
-      "skills": ["Python", "SQL", "Pandas", "Plotly", "Scikit-learn"]
+      "name": "Data & Automation",
+      "skills": ["Python", "SQL", "Pandas", "Plotly", "AWS", "Docker","Linux"]
     },
     {
       "name": "Laboratory Software",
-      "skills": ["CDS", "SDMS", "LIMS", "LES"]
+      "skills": ["CDS", "SDMS", "LIMS", "LES", "ELN"]
     },
     {
-      "name": "Tools & Technologies",
-      "skills": ["Git", "Docker", "AWS", "REST", "Linux"]
+      "name": "Product & Strategy",
+      "skills": ["Product Owner", "Technical Marketing", "Technical Writing", "Consulting", "Training"]
     }
   ]
 }
