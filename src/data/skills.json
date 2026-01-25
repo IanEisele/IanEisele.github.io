@@ -1,20 +1,20 @@
 {
   "categories": [
     {
-      "name": "Programming Languages",
-      "skills": ["Python", "SQL", "JavaScript", "R"]
+      "name": "Chromatography and Mass Spectrometry",
+      "skills": ["GC", "GCxGC", "GC-MS", "LC-MS", "LC-MS/MS"]
     },
     {
-      "name": "Data & ML",
-      "skills": ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Data Visualization"]
+      "name": "Data Science & Coding",
+      "skills": ["Python", "SQL", "Pandas", "Plotly", "Scikit-learn"]
     },
     {
-      "name": "Scientific Software",
-      "skills": ["CDS Software", "Laboratory Informatics", "LIMS", "Scientific Analysis"]
+      "name": "Laboratory Software",
+      "skills": ["CDS", "SDMS", "LIMS", "LES"]
     },
     {
       "name": "Tools & Technologies",
-      "skills": ["Git", "Docker", "AWS", "REST APIs", "Jupyter"]
+      "skills": ["Git", "Docker", "AWS", "REST", "Linux"]
     }
   ]
 }
