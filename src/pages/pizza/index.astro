@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const posts = (await getCollection('pizza')).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Pizza Quest | Ian's Pizza Blog"
+  description="My journey into homemade pizza making. Recipes, experiments, and lessons learned."
+>
+  <div class="min-h-screen">
+    <!-- Header -->
+    <header class="border-b border-border bg-surface/50 backdrop-blur-sm sticky top-0 z-50">
+      <div class="mx-auto max-w-4xl px-4 py-4 flex items-center justify-between">
+        <a href="/pizza" class="flex items-center gap-3 group">
+          <span class="text-2xl">🍕</span>
+          <span class="text-xl font-semibold text-text group-hover:text-accent transition-colors">
+            Pizza Quest
+          </span>
+        </a>
+        <a
+          href="/"
+          class="text-text-muted hover:text-accent transition-colors text-sm flex items-center gap-2"
+        >
+          <Icon name="lucide:arrow-left" class="w-4 h-4" />
+          Back to Portfolio
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-16 sm:py-24 px-4">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="text-4xl sm:text-5xl font-bold text-text mb-4">
+          Pizza Quest
+        </h1>
+        <p class="text-text-muted text-lg max-w-2xl mx-auto">
+          Documenting my journey to make the perfect homemade pizza.
+          Part cooking blog, part high score tracker.
+        </p>
+        <div class="mt-6 text-text-muted text-sm font-mono">
+          // CURRENT LEVEL: Home Oven
+        </div>
+      </div>
+    </section>
+
+    <!-- Posts -->
+    <section class="pb-24 px-4">
+      <div class="mx-auto max-w-4xl">
+        {posts.length === 0 ? (
+          <div class="text-center py-16 border border-border rounded-lg bg-surface">
+            <span class="text-4xl mb-4 block">🎮</span>
+            <p class="text-text-muted">No pizzas yet. Insert coin to continue...</p>
+          </div>
+        ) : (
+          <div class="space-y-6">
+            {posts.map((post) => {
+              const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              });
+              return (
+                <a
+                  href={`/pizza/${post.slug}`}
+                  class="block border border-border rounded-lg bg-surface hover:border-accent/50 hover:bg-surface-hover transition-all group"
+                >
+                  <div class="flex flex-col sm:flex-row">
+                    {post.data.heroImage ? (
+                      <div class="sm:w-48 sm:h-36 overflow-hidden rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none flex-shrink-0">
+                        <img
+                          src={post.data.heroImage}
+                          alt={post.data.title}
+                          class="w-full h-48 sm:h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    ) : (
+                      <div class="sm:w-48 sm:h-36 bg-surface-hover flex items-center justify-center rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none flex-shrink-0">
+                        <span class="text-4xl">🍕</span>
+                      </div>
+                    )}
+                    <div class="p-5 flex-1">
+                      <div class="flex items-start justify-between gap-4 mb-2">
+                        <h2 class="text-lg font-semibold text-text group-hover:text-accent transition-colors">
+                          {post.data.title}
+                        </h2>
+                        {post.data.difficulty && (
+                          <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded flex-shrink-0">
+                            {post.data.difficulty}
+                          </span>
+                        )}
+                      </div>
+                      <p class="text-text-muted text-sm mb-3 line-clamp-2">
+                        {post.data.description}
+                      </p>
+                      <div class="flex items-center gap-4 text-xs text-text-muted">
+                        <span class="flex items-center gap-1">
+                          <Icon name="lucide:calendar" class="w-3 h-3" />
+                          {formattedDate}
+                        </span>
+                        {post.data.prepTime && (
+                          <span class="flex items-center gap-1">
+                            <Icon name="lucide:clock" class="w-3 h-3" />
+                            {post.data.prepTime}
+                          </span>
+                        )}
+                        {post.data.tags && post.data.tags.length > 0 && (
+                          <span class="flex items-center gap-1">
+                            <Icon name="lucide:tag" class="w-3 h-3" />
+                            {post.data.tags.slice(0, 2).join(', ')}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-8 px-4">
+      <div class="mx-auto max-w-4xl text-center text-text-muted text-sm">
+        <p>🍕 + 🎮 = ❤️</p>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
