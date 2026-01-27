@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  backLink?: string;
+  backText?: string;
+}
+
+const { backLink = '/', backText = 'Back to Portfolio' } = Astro.props;
+---
+
+<header class="border-b border-border bg-surface/50 backdrop-blur-sm sticky top-0 z-50">
+  <div class="mx-auto max-w-4xl px-4 py-4 flex items-center justify-between">
+    <a href="/pizza" class="flex items-center gap-3 group">
+      <span class="text-2xl">🍕</span>
+      <span class="text-xl font-semibold text-text group-hover:text-accent transition-colors">
+        Pizza Quest
+      </span>
+    </a>
+    <a
+      href={backLink}
+      class="text-text-muted hover:text-accent transition-colors text-sm flex items-center gap-2"
+    >
+      <Icon name="lucide:arrow-left" class="w-4 h-4" />
+      {backText}
+    </a>
+  </div>
+</header>

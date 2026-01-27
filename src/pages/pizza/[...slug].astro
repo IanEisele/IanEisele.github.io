@@ -2,6 +2,8 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Icon } from 'astro-icon/components';
+import { formatDate } from '../../utils/formatDate';
+import PizzaHeader from '../../components/pizza/PizzaHeader.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('pizza');
@@ -17,12 +19,6 @@ interface Props {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
-
-const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
 ---
 
 <BaseLayout
@@ -30,24 +26,7 @@ const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
   description={post.data.description}
 >
   <div class="min-h-screen">
-    <!-- Header -->
-    <header class="border-b border-border bg-surface/50 backdrop-blur-sm sticky top-0 z-50">
-      <div class="mx-auto max-w-4xl px-4 py-4 flex items-center justify-between">
-        <a href="/pizza" class="flex items-center gap-3 group">
-          <span class="text-2xl">🍕</span>
-          <span class="text-xl font-semibold text-text group-hover:text-accent transition-colors">
-            Pizza Quest
-          </span>
-        </a>
-        <a
-          href="/pizza"
-          class="text-text-muted hover:text-accent transition-colors text-sm flex items-center gap-2"
-        >
-          <Icon name="lucide:arrow-left" class="w-4 h-4" />
-          All Posts
-        </a>
-      </div>
-    </header>
+    <PizzaHeader backLink="/pizza" backText="All Posts" />
 
     <!-- Article -->
     <article class="py-12 px-4">
@@ -81,7 +60,7 @@ const formattedDate = post.data.publishDate.toLocaleDateString('en-US', {
           <div class="flex flex-wrap items-center gap-4 text-sm text-text-muted mb-6">
             <span class="flex items-center gap-2">
               <Icon name="lucide:calendar" class="w-4 h-4" />
-              {formattedDate}
+              {formatDate(post.data.publishDate, 'long')}
             </span>
             {post.data.tags && post.data.tags.length > 0 && (
               <div class="flex flex-wrap items-center gap-2">
