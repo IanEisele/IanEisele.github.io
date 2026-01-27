@@ -23,8 +23,8 @@ My recipe hasn't changed much since 2020, I know it by heart but adjust for humi
 5. Ball-up and let bulk ferment for 2 hrs, room temperature in lightly oiled large container.
 
 **Split and cold ferment**
-6. Split in 3 even weight doughballs, ball-up in hands by continuously folding the dough into itself. The goal here is to create a uniform 'skin' to hold the dough's shape.
-7. Fridge for 2-3 days.
+1. Split in 3 even weight doughballs, ball-up in hands by continuously folding the dough into itself. The goal here is to create a uniform 'skin' to hold the dough's shape.
+2. Fridge for 2-3 days.
 
 ## The Prep and Bake
 
