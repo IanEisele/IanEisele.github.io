@@ -7,9 +7,6 @@ const pizza = defineCollection({
     description: z.string(),
     publishDate: z.date(),
     heroImage: z.string().optional(),
-    prepTime: z.string().optional(),
-    cookTime: z.string().optional(),
-    difficulty: z.enum(['Easy', 'Medium', 'Hard', 'Expert']).optional(),
     tags: z.array(z.string()).optional(),
   }),
 });
