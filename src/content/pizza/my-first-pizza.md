@@ -2,10 +2,8 @@
 title: "My First Neapolitan Attempt"
 description: "Starting the pizza journey with a classic Neapolitan style. Lessons learned, mistakes made, and why my smoke detector now knows me by name."
 publishDate: 2024-01-15
-prepTime: "24 hours"
-cookTime: "5 mins"
-difficulty: "Medium"
-tags: ["Neapolitan", "Home Oven"]
+heroImage: "/images/pizza/9_2020_neo.jpeg"
+tags: ["Neapolitan", "Ooni Koda 16"]
 ---
 
 ## The Beginning
