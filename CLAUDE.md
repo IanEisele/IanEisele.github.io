@@ -33,6 +33,8 @@ src/
 ├── components/
 │   ├── Header.astro           # Sticky nav with smooth scroll links
 │   ├── Footer.astro           # Footer with social links
+│   ├── pizza/
+│   │   └── PizzaHeader.astro  # Sticky header for pizza blog pages
 │   └── sections/              # Portfolio page sections
 │       ├── Hero.astro
 │       ├── About.astro
@@ -47,6 +49,8 @@ src/
 │   └── BaseLayout.astro       # SEO, View Transitions, meta tags
 ├── styles/
 │   └── global.css             # Tailwind v4 + custom theme
+├── utils/
+│   └── formatDate.ts          # Date formatting utility
 ├── data/                      # JSON files for easy content updates
 │   ├── experience.json
 │   ├── skills.json
