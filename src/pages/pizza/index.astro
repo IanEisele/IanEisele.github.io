@@ -54,6 +54,10 @@ const posts = (await getCollection('pizza')).sort(
                       <img
                         src={post.data.heroImage}
                         alt={post.data.title}
+                        width="192"
+                        height="144"
+                        loading="lazy"
+                        decoding="async"
                         class="w-full h-48 sm:h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>

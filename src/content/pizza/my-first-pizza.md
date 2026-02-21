@@ -19,8 +19,9 @@ My recipe hasn't changed much since 2020, I know it by heart but adjust for humi
 1. Start with cold, filtered water, it will warm up as it is worked.
 2. Add the yeast and wisk to incorporate air, not clear if this makes a difference but doesn't hurt.
 3. Add flour and mix (KitchenAid) until fully incorporated into a shaggy ball. Leave it to autolyze for 10-30 min.
-4. Mix for 10 minutes
-5. Ball-up and let bulk ferment for 2 hrs, room temperature in lightly oiled large container.
+4. Add salt
+5. Mix for 10 minutes
+6. Ball-up and let bulk ferment for 2 hrs, room temperature in lightly oiled large container.
 
 **Split and cold ferment**
 1. Split in 3 even weight doughballs, ball-up in hands by continuously folding the dough into itself. The goal here is to create a uniform 'skin' to hold the dough's shape.

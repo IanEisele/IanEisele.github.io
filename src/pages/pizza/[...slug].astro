@@ -37,6 +37,10 @@ const { Content } = await post.render();
             <img
               src={post.data.heroImage}
               alt={post.data.title}
+              width="768"
+              height="432"
+              loading="eager"
+              decoding="async"
               class="w-full h-full object-cover"
             />
           </div>
