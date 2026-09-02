@@ -1,6 +1,6 @@
 {
   "name": "Ian Eisele",
-  "title": "Laboratory Informatics Scientist",
+  "title": "Lab Informatics Scientist & Product Owner",
   "careerStartYear": 2006,
   "tagline": {
     "text": "Specializing in {highlights}.",
@@ -16,7 +16,6 @@
     { "value": "Python", "label": "Primary Language" }
   ],
   "contact": {
-    "email": "your.email@example.com",
     "github": "https://github.com/IanEisele",
     "linkedin": "https://linkedin.com/in/ianeisele"
   }

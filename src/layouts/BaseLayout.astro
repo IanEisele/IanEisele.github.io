@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
+import profile from '../data/profile.json';
 
 interface Props {
   title?: string;
@@ -8,11 +9,22 @@ interface Props {
 }
 
 const {
-  title = 'Ian Eisele | Laboratory Informatics Scientist',
-  description = 'Laboratory Informatics Scientist specializing in CDS Software, LIMS, Python, AI/ML, and Scientific Data Analysis.',
+  title = 'Ian Eisele | Lab Informatics Scientist & Product Owner',
+  description = 'Lab informatics scientist and product owner working across CDS, SDMS, LIMS, and data analytics\u2014automating scientific workflows and building FAIR data foundations that make lab data ready for AI/ML.',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Person schema is only meaningful on the homepage
+const isHome = Astro.url.pathname === '/';
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: profile.title,
+  url: Astro.site?.href,
+  sameAs: [profile.contact.github, profile.contact.linkedin],
+};
 ---
 
 <!doctype html>
@@ -29,18 +41,32 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL('/og-image.png', Astro.site)} />
+    <meta property="og:site_name" content="Ian Eisele" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/og-image.png', Astro.site)} />
 
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="/fonts/FiraCode-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/FiraCode-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/FiraCode-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/FiraCode-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#0d0d0f" />
 
     <title>{title}</title>
+    {
+      isHome && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(personSchema)}
+        />
+      )
+    }
     <ViewTransitions />
   </head>
   <body class="min-h-screen bg-bg text-text antialiased">

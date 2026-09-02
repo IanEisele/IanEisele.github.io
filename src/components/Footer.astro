@@ -25,10 +25,10 @@ const internalLinks = [
           internalLinks.map((link) => (
             <a
               href={link.href}
-              class="text-text-muted hover:text-accent transition-colors"
+              class="text-text-muted hover:text-accent transition-colors p-2 -m-2"
               aria-label={link.label}
             >
-              <Icon name={link.icon} class="w-5 h-5" />
+              <Icon name={link.icon} class="w-5 h-5" aria-hidden="true" />
             </a>
           ))
         }
@@ -39,10 +39,10 @@ const internalLinks = [
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-text-muted hover:text-accent transition-colors"
+              class="text-text-muted hover:text-accent transition-colors p-2 -m-2"
               aria-label={link.label}
             >
-              <Icon name={link.icon} class="w-5 h-5" />
+              <Icon name={link.icon} class="w-5 h-5" aria-hidden="true" />
             </a>
           ))
         }

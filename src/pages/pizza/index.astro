@@ -75,12 +75,12 @@ const posts = (await getCollection('pizza')).sort(
                     </p>
                     <div class="flex items-center gap-4 text-xs text-text-muted">
                       <span class="flex items-center gap-1">
-                        <Icon name="lucide:calendar" class="w-3 h-3" />
+                        <Icon name="lucide:calendar" class="w-3 h-3" aria-hidden="true" />
                         {formatDate(post.data.publishDate)}
                       </span>
                       {post.data.tags && post.data.tags.length > 0 && (
                         <span class="flex items-center gap-1">
-                          <Icon name="lucide:tag" class="w-3 h-3" />
+                          <Icon name="lucide:tag" class="w-3 h-3" aria-hidden="true" />
                           {post.data.tags.slice(0, 2).join(', ')}
                         </span>
                       )}

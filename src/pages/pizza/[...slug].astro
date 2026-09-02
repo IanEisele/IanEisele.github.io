@@ -63,7 +63,7 @@ const { Content } = await post.render();
           <!-- Meta -->
           <div class="flex flex-wrap items-center gap-4 text-sm text-text-muted mb-6">
             <span class="flex items-center gap-2">
-              <Icon name="lucide:calendar" class="w-4 h-4" />
+              <Icon name="lucide:calendar" class="w-4 h-4" aria-hidden="true" />
               {formatDate(post.data.publishDate, 'long')}
             </span>
             {post.data.tags && post.data.tags.length > 0 && (
@@ -96,7 +96,7 @@ const { Content } = await post.render();
             href="/pizza"
             class="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors"
           >
-            <Icon name="lucide:arrow-left" class="w-4 h-4" />
+            <Icon name="lucide:arrow-left" class="w-4 h-4" aria-hidden="true" />
             More Recipes
           </a>
           <span class="text-text-muted text-sm font-mono">LEVEL COMPLETE!</span>

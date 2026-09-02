@@ -23,9 +23,10 @@ npm run preview
 ## Updating Content
 
 Edit the JSON files in `src/data/` to update portfolio content:
+- `profile.json` - Name, headline, bio
 - `experience.json` - Work history
 - `skills.json` - Skill categories
-- `projects.json` - Project cards
+- `publications.json` - Publications and application notes
 
 ## Tech Stack
 

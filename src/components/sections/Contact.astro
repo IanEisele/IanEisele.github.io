@@ -44,7 +44,8 @@ const contactLinks = [
               <Icon
                 name={link.icon}
                 class="w-8 h-8 text-accent mx-auto mb-4 group-hover:scale-110 transition-transform"
-              />
+              aria-hidden="true"
+            />
               <h3 class="text-text font-medium mb-1">{link.label}</h3>
               <p class="text-text-muted text-sm truncate">{link.value}</p>
             </a>
@@ -58,7 +59,7 @@ const contactLinks = [
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-bg font-semibold px-8 py-4 rounded-lg transition-all hover-glow text-lg"
       >
-        <Icon name="lucide:linkedin" class="w-5 h-5" />
+        <Icon name="lucide:linkedin" class="w-5 h-5" aria-hidden="true" />
         Connect on LinkedIn
       </a>
     </div>

@@ -4,8 +4,8 @@ import { Icon } from 'astro-icon/components';
 const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
   { href: '#publications', label: 'Publications' },
+  { href: '#skills', label: 'Skills' },
   { href: '#contact', label: 'Contact' },
 ];
 ---
@@ -43,12 +43,12 @@ const navLinks = [
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 text-text-muted hover:text-accent transition-colors"
+        class="md:hidden p-3 -mr-1 text-text-muted hover:text-accent transition-colors"
         aria-label="Toggle menu"
         aria-expanded="false"
       >
-        <Icon name="lucide:menu" class="w-6 h-6" id="menu-icon" />
-        <Icon name="lucide:x" class="w-6 h-6 hidden" id="close-icon" />
+        <Icon name="lucide:menu" class="w-6 h-6" id="menu-icon" aria-hidden="true" />
+        <Icon name="lucide:x" class="w-6 h-6 hidden" id="close-icon" aria-hidden="true" />
       </button>
     </div>
 

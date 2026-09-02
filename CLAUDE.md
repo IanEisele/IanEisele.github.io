@@ -40,7 +40,7 @@ src/
 │       ├── About.astro
 │       ├── Experience.astro
 │       ├── Skills.astro
-│       ├── Projects.astro
+│       ├── Publications.astro
 │       └── Contact.astro
 ├── content/
 │   ├── config.ts              # Content collection schemas
@@ -52,9 +52,10 @@ src/
 ├── utils/
 │   └── formatDate.ts          # Date formatting utility
 ├── data/                      # JSON files for easy content updates
+│   ├── profile.json
 │   ├── experience.json
 │   ├── skills.json
-│   └── projects.json
+│   └── publications.json
 └── pages/
     ├── index.astro            # Single-page portfolio
     └── pizza/
@@ -125,9 +126,10 @@ The site includes a pizza blog section at `/pizza` using Astro's content collect
 ## Updating Content
 
 **Portfolio content** - edit JSON files in `src/data/`:
+- `profile.json` - Name, headline, bio, stats, contact links
 - `experience.json` - Work history timeline
 - `skills.json` - Skill categories and badges
-- `projects.json` - Project cards
+- `publications.json` - Publications and application notes
 
 **Pizza blog posts** - add/edit markdown files in `src/content/pizza/`
 
