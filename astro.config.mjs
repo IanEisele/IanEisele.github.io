@@ -13,18 +13,14 @@ export default defineConfig({
     icon({
       include: {
         lucide: [
-          'arrow-left',
           'calendar',
           'check',
           'chevron-down',
-          'code-2',
           'external-link',
           'file-text',
           'github',
           'linkedin',
           'menu',
-          'pizza',
-          'tag',
           'x',
         ],
       },

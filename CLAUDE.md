@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio/resume website for Ian Eisele (IanEisele.github.io), built with Astro and Tailwind CSS v4. It's a modern, dark-themed site featuring a single-page portfolio with smooth animations and a pizza blog section.
+This is a personal portfolio/resume website for Ian Eisele (IanEisele.github.io), built with Astro and Tailwind CSS v4. It's a modern, dark-themed site featuring a single-page portfolio with smooth animations.
 
 ## Development
 
@@ -33,8 +33,6 @@ src/
 ├── components/
 │   ├── Header.astro           # Sticky nav with smooth scroll links
 │   ├── Footer.astro           # Footer with social links
-│   ├── pizza/
-│   │   └── PizzaHeader.astro  # Sticky header for pizza blog pages
 │   └── sections/              # Portfolio page sections
 │       ├── Hero.astro
 │       ├── About.astro
@@ -42,25 +40,17 @@ src/
 │       ├── Skills.astro
 │       ├── Publications.astro
 │       └── Contact.astro
-├── content/
-│   ├── config.ts              # Content collection schemas
-│   └── pizza/                 # Pizza blog posts (markdown)
 ├── layouts/
 │   └── BaseLayout.astro       # SEO, View Transitions, meta tags
 ├── styles/
 │   └── global.css             # Tailwind v4 + custom theme
-├── utils/
-│   └── formatDate.ts          # Date formatting utility
 ├── data/                      # JSON files for easy content updates
 │   ├── profile.json
 │   ├── experience.json
 │   ├── skills.json
 │   └── publications.json
 └── pages/
-    ├── index.astro            # Single-page portfolio
-    └── pizza/
-        ├── index.astro        # Blog listing page
-        └── [...slug].astro    # Individual post pages
+    └── index.astro            # Single-page portfolio
 ```
 
 **Key dependencies:**
@@ -82,46 +72,7 @@ Colors are defined as CSS custom properties in `src/styles/global.css`.
 
 ## Images
 
-Images are organized separately for portfolio and blog content:
-
-| Section | Location | Usage |
-|---------|----------|-------|
-| Portfolio | `src/assets/images/` | Import in components for Astro optimization |
-| Pizza blog | `public/images/pizza/` | Reference by URL path in frontmatter |
-
-**Portfolio images** are imported in Astro components and benefit from automatic optimization (resizing, format conversion, lazy loading).
-
-**Pizza blog images** use simple URL paths in frontmatter (e.g., `heroImage: "/images/pizza/my-pizza.jpg"`). These are served directly from the `public/` directory.
-
-## Pizza Blog
-
-The site includes a pizza blog section at `/pizza` using Astro's content collections.
-
-**Content collection schema** (`src/content/config.ts`):
-- `title` (required) - Post title
-- `description` (required) - Short description for listings
-- `publishDate` (required) - Publication date
-- `heroImage` (optional) - URL path to image in `public/images/pizza/`
-- `tags` (optional) - Array of tag strings
-
-**Adding new posts:**
-1. Create a new `.md` file in `src/content/pizza/`
-2. Add images to `public/images/pizza/`
-3. Add frontmatter with required fields:
-   ```yaml
-   ---
-   title: "My Pizza Post"
-   description: "A description of this post"
-   publishDate: 2024-01-15
-   heroImage: "/images/pizza/my-image.jpg"
-   tags: ["neapolitan", "homemade"]
-   ---
-   ```
-4. Write post content in markdown below the frontmatter
-
-**URL structure:**
-- `/pizza` - Blog listing page
-- `/pizza/[slug]` - Individual posts (slug derived from filename)
+Portfolio images live in `src/assets/images/` and are imported in Astro components, which gives them automatic optimization (resizing, format conversion, lazy loading).
 
 ## Updating Content
 
@@ -130,8 +81,6 @@ The site includes a pizza blog section at `/pizza` using Astro's content collect
 - `experience.json` - Work history timeline
 - `skills.json` - Skill categories and badges
 - `publications.json` - Publications and application notes
-
-**Pizza blog posts** - add/edit markdown files in `src/content/pizza/`
 
 The components automatically render from these data files.
 

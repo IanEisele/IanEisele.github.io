@@ -7,10 +7,6 @@ const socialLinks = [
   { href: 'https://github.com/IanEisele', icon: 'lucide:github', label: 'GitHub' },
   { href: 'https://linkedin.com/in/ianeisele', icon: 'lucide:linkedin', label: 'LinkedIn' },
 ];
-
-const internalLinks = [
-  { href: '/pizza', icon: 'lucide:pizza', label: 'Pizza Blog' },
-];
 ---
 
 <footer class="border-t border-border bg-surface/50">
@@ -21,18 +17,6 @@ const internalLinks = [
       </p>
 
       <div class="flex items-center gap-4">
-        {
-          internalLinks.map((link) => (
-            <a
-              href={link.href}
-              class="text-text-muted hover:text-accent transition-colors p-2 -m-2"
-              aria-label={link.label}
-            >
-              <Icon name={link.icon} class="w-5 h-5" aria-hidden="true" />
-            </a>
-          ))
-        }
-        <span class="text-border">|</span>
         {
           socialLinks.map((link) => (
             <a
